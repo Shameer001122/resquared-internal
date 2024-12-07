@@ -190,6 +190,7 @@ Resquared section 2
 */
 
 /* Global Styles */
+/* Global Styles */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -208,9 +209,10 @@ body {
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     max-width: 1200px;
+    gap: 20px;
 }
 
 /* Left Section Styling */
@@ -218,6 +220,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex: 1;
 }
 
 .logo-circle {
@@ -231,7 +234,7 @@ body {
 }
 
 .logo-img {
-    width: 250px;
+    width: 100px; /* Adjusted to fit container */
     height: auto;
 }
 
@@ -270,12 +273,14 @@ body {
 .info-right {
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 15px;
 }
 
 .map-placeholder {
-    width: 200px;
-    height: 150px;
+    width: 100%; /* Make map larger */
+    max-width: 400px; /* Limit size for desktop */
+    height: 250px; /* Increased size for better visibility */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -289,10 +294,12 @@ body {
 
 .address-card {
     background-color: #1E2130;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 250px; /* Adjusted for desktop */
 }
 
 .address-card p {
@@ -302,6 +309,66 @@ body {
 .address-card i {
     color: #FACC15; /* Yellow */
     margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) { /* Tablet View */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .info-left, .info-right {
+        width: 100%;
+    }
+
+    .logo-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .map-placeholder {
+        max-width: 350px;
+        height: 200px;
+    }
+
+    .address-card {
+        max-width: 300px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile View */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-left {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .company-details {
+        align-items: center;
+    }
+
+    .map-placeholder {
+        width: 90%; /* Use most of the screen width */
+        height: 200px;
+    }
+
+    .address-card {
+        width: 90%; /* Fit to screen width */
+        font-size: 0.85rem;
+    }
 }
 
 
