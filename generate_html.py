@@ -2,31 +2,39 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 import os
 
-# Step 1: Load the CSV file
-csv_file = "C:\\Users\\ST\\OneDrive\\Desktop\\Resquared\\data.csv"  # Replace with the path to your CSV file
-data = pd.read_csv(csv_file)
+# Load CSV
+csv_file = r"C:\\Users\\ST\\OneDrive\\Desktop\\Resquared\\data.csv"
+try:
+    data = pd.read_csv(csv_file, encoding="utf-8")
+except UnicodeDecodeError:
+    print("UTF-8 decoding failed, trying ISO-8859-1...")
+    data = pd.read_csv(csv_file, encoding="ISO-8859-1")
 
-# Step 2: Setup Jinja2 environment
-template_dir = "C:\\Users\\ST\\OneDrive\\Desktop\\Resquared\\templates"  # Folder where your HTML template is stored
-output_dir = "C:\\Users\\ST\\OneDrive\\Desktop\\Resquared\\output"  # Folder to save generated HTML pages
+print(data.head())  # Debug: Print data to ensure correct loading
 
-if not os.path.exists(output_dir):  # Create output folder if it doesn't exist
+# Jinja2 Environment
+template_dir = r"C:\\Users\\ST\\OneDrive\\Desktop\\Resquared\\templates"
+output_dir = r"C:\\Users\\ST\\OneDrive\\Desktop\\Resquared\\output"
+
+if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 env = Environment(loader=FileSystemLoader(template_dir))
-template = env.get_template("index.html")  # Your HTML template name
+template = env.get_template("index.html")
 
-# Step 3: Generate HTML files
+# Generate HTML Files
 for index, row in data.iterrows():
-    # Render template with CSV data
-    html_content = template.render(
-        title=row["Name"],       # Replace with your CSV column names
-        header=row["Address"],     # Replace with your CSV column names
-        description=row["City"]  # Replace with your CSV column names
-    )
-    
-    # Save to individual HTML files
-    filename = os.path.join(output_dir, f"page_{index + 1}.html")
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(html_content)
-    print(f"Generated: {filename}")
+    print(row)  # Debug: Print each row
+    try:
+        html_content = template.render(
+            company_name=row["Name"],
+            company_category=row["Categories"],
+            address=row["Address"],
+            phone=row["Phone"]
+        )
+        filename = os.path.join(output_dir, f"page_{index + 1}.html")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"Generated: {filename}")
+    except Exception as e:
+        print(f"Error processing row {index}: {e}")
