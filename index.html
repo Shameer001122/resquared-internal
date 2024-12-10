@@ -13,7 +13,6 @@
 <!-- social media icon  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-</head>
 <body>
     <!-- Header -->
     <header class="header">
@@ -31,6 +30,7 @@
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
+                <span class="close-icon">&times;</span>
             </div>
             <!-- Navigation -->
             <nav class="nav" id="nav-menu">
@@ -52,8 +52,7 @@
                 </ul>
                 <a href="#" class="btn-demo">Get a Demo <span class="arrow">&rarr;</span></a>
             </nav>
-            
-    </header>
+        </header>
 
     <section class="company-info">
         <div class="container">
@@ -63,8 +62,8 @@
                     <img src="images/refret logo.PNG" alt="Refert Logo" class="logo-img">
                 </div>
                 <div class="company-details">
-                    <h1 class="company-name">Refert Sports</h1>
-                    <p class="company-category">Sports Items</p>
+                    <h1 class="company-name">{{ company_name }}</h1>
+                    <p class="company-category">{{ Categories }}</p>
                     <div class="tags">
                         <span class="tag">Sport</span>
                         <span class="tag">Non-chain</span>
@@ -79,8 +78,8 @@
                     <img src="images/map black 2.png" alt="Map" class="map-img">
                 </div>
                 <div class="address-card">
-                    <p class="address"><i class="fas fa-map-marker-alt"></i> Kansas City, IL 64108</p>
-                    <p class="phone"><i class="fas fa-phone-alt"></i> (618) 303-8735</p>
+                    <p class="address"><i class="fas fa-map-marker-alt"></i> {{ Address }}</p>
+                    <p class="phone"><i class="fas fa-phone-alt"></i> {{ Phone }}</p>
                 </div>
             </div>
         </div>
@@ -197,7 +196,7 @@
                 <i class="fas fa-globe-americas"></i>
                 <div>
                     <h3>RE2 Score (Online Presence)</h3>
-                    <p>450/500</p>
+                    <p>{{ RE2Score }}</p>
                 </div>
             </div>
         </div>
