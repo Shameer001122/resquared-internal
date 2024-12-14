@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resquared-Refert</title>
+    <title>Resquared-{{ company_name }}</title>
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Link to CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-<!-- social media icon  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- social media icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/re2 favicon.png" type="image/png">
+
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -38,19 +42,29 @@
                     <li class="dropdown">
                         <a href="#">Platform</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Local Business Database</a></li>
-                            <li><a href="#">Email Prospecting</a></li>
-                            <li><a href="#">Sales Pipeline Management</a></li>
-                            <li><a href="#">Outreach Analytics</a></li>
-                            <li><a href="#">Social Media Outreach</a></li>
+                            <li><a href="https://www.re2.ai/platform/database">Local Business Database</a></li>
+                            <li><a href="https://www.re2.ai/platform/prospecting">Email Prospecting</a></li>
+                            <li><a href="https://www.re2.ai/platform/pipeline">Sales Pipeline Management</a></li>
+                            <li><a href="https://www.re2.ai/platform/analytics">Outreach Analytics</a></li>
+                            <li><a href="https://www.re2.ai/platform/socialmedia">Social Media Outreach</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Resources</a></li>
+                    <li><a href="https://www.re2.ai/pricing">Pricing</a></li>
+                    <li><a href="https://www.re2.ai/testimonials">Testimonials</a></li>
+                    <li><a href="https://www.re2.ai/blog">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.re2.ai/resources">Free Resources</a></li>
+                            <li><a href="https://www.re2.ai/podcasts">Podcast</a></li>
+                            <li><a href="https://www.re2.ai/newsletter">Newsletter</a></li>
+                            <li><a href="https://www.re2.ai/faq">FAQ</a></li>
+                            <li><a href="https://www.re2.ai/press">Press</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <a href="#" class="btn-demo">Get a Demo <span class="arrow">&rarr;</span></a>
+                
+                <a href="https://www.re2.ai/demo" class="btn-demo">Get a Demo <span class="arrow">&rarr;</span></a>
             </nav>
         </header>
 
@@ -58,14 +72,12 @@
         <div class="container">
             <!-- Left Section: Logo and Info -->
             <div class="info-left">
-                <div class="logo-circle">
-                    <img src="images/refret logo.PNG" alt="Refert Logo" class="logo-img">
-                </div>
+    
                 <div class="company-details">
                     <h1 class="company-name">{{ company_name }}</h1>
                     <p class="company-category">{{ Categories }}</p>
                     <div class="tags">
-                        <span class="tag">Sport</span>
+                        <span class="tag">Business</span>
                         <span class="tag">Non-chain</span>
                         <span class="tag">Has email</span>
                     </div>
@@ -128,7 +140,9 @@
     <script src="script.js"></script>
 
     <!-- Section 4 business information -->
-    <button class="login-button" onclick="login()">Log in to View Information</button>
+    <a href="https://www.re2recruit.com/">
+        <button class="login-button">Log in to View Information</button>
+      </a>
     <div class="info-section">
         <!-- Column 1 -->
         <div class="column">
@@ -281,10 +295,10 @@
         <div class="footer-resources">
             <h4>Resources</h4>
             <ul>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Press</a></li>
+                <li><a href="https://www.re2.ai/testimonials">Testimonials</a></li>
+                <li><a href="https://www.re2.ai/faq">FAQ</a></li>
+                <li><a href="https://www.re2.ai/blog">Blog</a></li>
+                <li><a href="https://www.re2.ai/press">Press</a></li>
             </ul>
         </div>
 
@@ -292,9 +306,9 @@
         <div class="footer-about">
             <h4>About</h4>
             <ul>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Privacy & Terms</a></li>
+                <li><a href="https://www.workatastartup.com/companies/resquared">Careers</a></li>
+                <li><a href="mailto:support@re2.ai">Contact</a></li>
+                <li><a href="https://www.re2.ai/privacy-terms">Privacy & Terms</a></li>
             </ul>
         </div>
 
@@ -302,9 +316,9 @@
         <div class="footer-social">
             <h4>Follow Us On</h4>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-spotify"></i></a> <!-- Spotify Icon -->
-                <a href="#"><i class="fab fa-linkedin"></i></a> <!-- LinkedIn Icon -->
-                <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
+                <a href="https://open.spotify.com/show/1d6fCtd1xqh4iYw4hVaGUW?si=6697e0e5e38f49dd"><i class="fab fa-spotify"></i></a> <!-- Spotify Icon -->
+                <a href="https://www.linkedin.com/company/36077507/"><i class="fab fa-linkedin"></i></a> <!-- LinkedIn Icon -->
+                <a href="https://www.instagram.com/resquared_ai/"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
             </div>
         </div>        
     </div>
